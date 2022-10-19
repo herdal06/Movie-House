@@ -3,4 +3,26 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="movie_name">Movie Name</string>
     <string name="movie_image">movie image</string>
+    <string name="vote_average_example">8.1</string>
+    <string name="movie_title_example">Fight Club</string>
+    <string name="show_all">Show All</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="popular">Popular</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="watch_list">Watch List</string>
+    <string name="genre_example">Comedy</string>
+    <string name="tagline_example">Mischief. Mayhem. Soap.</string>
+    <string name="search_for_a_movie">Search for a movie…</string>
+    <string name="empty_watch_list_message">Your watch list is empty</string>
+    <string name="visit_home_page_message">Visit homepage to save movies</string>
+    <string name="go_to_homepage">Go to homepage</string>
+    <string name="bookmark_icon">bookmark icon</string>
+    <string name="error_message">Error while loading the data</string>
+    <string name="movie_overview_example">After escaping from an Estonian psychiatric facility, Leena Klammer travels to America by impersonating Esther, the missing daughter of a wealthy family. But when her mask starts to slip, she is put against a mother who will protect her family from the murderous “child” at any cost.</string>
+    <string name="release_date_example">2022–07–27</string>
+    <string name="movie_backdrop">movie backdrop</string>
+    <string name="movie_poster">movie poster</string>
 </resources>

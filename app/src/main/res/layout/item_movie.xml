@@ -1,24 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/double_extra_small_margin">
 
-    <ImageView
-        android:id="@+id/ivMovie"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/movie_image"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:background="@color/colorPrimaryVariant">
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/movie_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivMovie" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <View
+            android:id="@+id/ic_star"
+            android:layout_width="@dimen/ic_star_width"
+            android:layout_height="@dimen/ic_star_height"
+            android:layout_marginStart="@dimen/double_extra_small_margin"
+            android:layout_marginTop="@dimen/double_extra_small_margin"
+            android:background="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_movie" />
+
+        <TextView
+            android:id="@+id/tv_vote_average"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/double_extra_small_margin"
+            android:layout_marginTop="@dimen/double_extra_small_margin"
+            android:text="@string/vote_average_example"
+            app:layout_constraintStart_toEndOf="@+id/ic_star"
+            app:layout_constraintTop_toBottomOf="@+id/iv_movie" />
+
+        <TextView
+            android:id="@+id/tv_original_title"
+            android:layout_width="@dimen/item_movie_title_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/double_extra_small_margin"
+            android:layout_marginTop="@dimen/double_extra_small_margin"
+            android:layout_marginBottom="@dimen/double_extra_small_margin"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:scrollHorizontally="true"
+            android:text="@string/movie_title_example"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_star" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
