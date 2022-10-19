@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- app colors -->
+    <color name="colorPrimary">#303030</color>
+    <color name="colorPrimaryVariant">#1D1D1D</color>
+    <color name="titleColor">#F3C51A</color>
+    <color name="starIconColor">#F3C51A</color>
+    <color name="primaryTextColor">#E0E0E0</color>
+    <color name="showAllTextColor">#0FA1E4</color>
+    <color name="fragmentBackgroundColor">#191919</color>
 </resources>
