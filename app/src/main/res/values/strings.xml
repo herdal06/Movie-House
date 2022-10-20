@@ -25,4 +25,5 @@
     <string name="release_date_example">2022–07–27</string>
     <string name="movie_backdrop">movie backdrop</string>
     <string name="movie_poster">movie poster</string>
+    <string name="error">Error!</string>
 </resources>
