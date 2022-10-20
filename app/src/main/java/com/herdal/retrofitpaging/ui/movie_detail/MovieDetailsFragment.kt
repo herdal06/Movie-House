@@ -17,6 +17,7 @@ import com.herdal.retrofitpaging.util.extensions.loadImage
 import com.herdal.retrofitpaging.util.extensions.show
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import java.text.DecimalFormat
 
 @AndroidEntryPoint
 class MovieDetailsFragment : Fragment() {
@@ -77,10 +78,15 @@ class MovieDetailsFragment : Fragment() {
         ivBackdrop.loadImage(ApiConstants.getPosterPath(movie.backdrop_path))
         ivPoster.loadImage(ApiConstants.getPosterPath(movie.poster_path))
         tvMovieNameDetails.text = movie.title
-        tvVoteAverageDetails.text = movie.vote_average.toString()
+        tvVoteAverageDetails.text = formatVoteAverage(movie.vote_average)
         tvReleaseDate.text = movie.release_date
         tvMovieTagline.text = movie.tagline
         tvMovieOverview.text = movie.overview
+    }
+
+    private fun formatVoteAverage(formatValue: Double): String {
+        val df = DecimalFormat("#.#")
+        return df.format(formatValue)
     }
 
     override fun onDestroyView() {

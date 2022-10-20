@@ -51,18 +51,19 @@
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/small_padding">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_backdrop"
                 android:layout_width="0dp"
                 android:layout_height="275dp"
                 android:contentDescription="@string/movie_backdrop"
+                android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ImageContrastCheck"
                 tools:src="@tools:sample/avatars" />
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_poster"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,7 +76,7 @@
 
             <TextView
                 android:id="@+id/tvMovieNameDetails"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/movie_details_text_view_width"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/extra_small_margin"
                 android:layout_marginTop="@dimen/extra_small_margin"
@@ -110,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/double_extra_small_margin"
-                android:layout_marginEnd="@dimen/extra_small_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
                 android:text="@string/release_date_example"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvMovieNameDetails" />

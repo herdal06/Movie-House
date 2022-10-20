@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RetrofitPaging</string>
+    <string name="app_name">Movie House</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="movie_name">Movie Name</string>
     <string name="movie_image">movie image</string>
