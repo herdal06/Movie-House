@@ -22,7 +22,16 @@ class MoviesFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private val viewModel: MoviesViewModel by viewModels()
-    private val moviesAdapter: MoviesAdapter by lazy {
+    private val popularMoviesAdapter: MoviesAdapter by lazy {
+        MoviesAdapter()
+    }
+    private val topRatedMoviesAdapter: MoviesAdapter by lazy {
+        MoviesAdapter()
+    }
+    private val upcomingMoviesAdapter: MoviesAdapter by lazy {
+        MoviesAdapter()
+    }
+    private val nowPlayingMoviesAdapter: MoviesAdapter by lazy {
         MoviesAdapter()
     }
 
@@ -38,17 +47,20 @@ class MoviesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRecyclerView()
+        setupRecyclerViews()
         collectLatestData()
     }
 
-    private fun setupRecyclerView() {
-        binding.rvPopularMovies.adapter = moviesAdapter
+    private fun setupRecyclerViews()=binding.apply {
+        rvPopularMovies.adapter = popularMoviesAdapter
+        rvNowPlayingMovies.adapter = nowPlayingMoviesAdapter
+        rvTopRatedMovies.adapter = topRatedMoviesAdapter
+        rvUpcomingMovies.adapter = upcomingMoviesAdapter
     }
 
     private fun collectLatestData() = lifecycleScope.launch {
-        viewModel.movies.collectLatest { pagedData ->
-            moviesAdapter.submitData(pagedData)
+        viewModel.popularMovies.collectLatest { pagedData ->
+            popularMoviesAdapter.submitData(pagedData)
         }
     }
 

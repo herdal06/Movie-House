@@ -7,8 +7,8 @@
     android:layout_margin="@dimen/double_extra_small_margin">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/colorPrimaryVariant">
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/double_extra_small_margin"
             android:layout_marginTop="@dimen/double_extra_small_margin"
-            android:layout_marginBottom="@dimen/double_extra_small_margin"
+            android:layout_marginBottom="24dp"
             android:ellipsize="end"
             android:maxLines="2"
             android:scrollHorizontally="true"
