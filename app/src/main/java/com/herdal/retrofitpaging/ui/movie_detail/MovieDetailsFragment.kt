@@ -14,7 +14,7 @@ import com.herdal.retrofitpaging.databinding.FragmentMovieDetailsBinding
 import com.herdal.retrofitpaging.ui.movie_detail.adapter.GenreAdapter
 import com.herdal.retrofitpaging.util.Resource
 import com.herdal.retrofitpaging.util.extensions.gone
-import com.herdal.retrofitpaging.util.extensions.loadImage
+import com.herdal.retrofitpaging.util.extensions.loadImageWithCoil
 import com.herdal.retrofitpaging.util.extensions.show
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -86,8 +86,8 @@ class MovieDetailsFragment : Fragment() {
     }
 
     private fun setupUI(movie: MovieDetails) = binding.apply {
-        ivBackdrop.loadImage(ApiConstants.getPosterPath(movie.backdrop_path))
-        ivPoster.loadImage(ApiConstants.getPosterPath(movie.poster_path))
+        ivBackdrop.loadImageWithCoil(ApiConstants.getPosterPath(movie.backdrop_path))
+        ivPoster.loadImageWithCoil(ApiConstants.getPosterPath(movie.poster_path))
         tvMovieNameDetails.text = movie.title
         tvVoteAverageDetails.text = formatVoteAverage(movie.vote_average)
         tvReleaseDate.text = movie.release_date
