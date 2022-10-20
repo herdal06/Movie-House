@@ -6,7 +6,7 @@
     app:startDestination="@id/moviesFragment">
     <fragment
         android:id="@+id/moviesFragment"
-        android:name="com.herdal.retrofitpaging.ui.MoviesFragment"
+        android:name="com.herdal.retrofitpaging.ui.movies.MoviesFragment"
         android:label="fragment_movies"
         tools:layout="@layout/fragment_movies" />
 </navigation>

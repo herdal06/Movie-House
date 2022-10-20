@@ -1,4 +1,4 @@
-package com.herdal.retrofitpaging.ui.adapter
+package com.herdal.retrofitpaging.ui.movies.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.herdal.retrofitpaging.data.remote.model.Movie

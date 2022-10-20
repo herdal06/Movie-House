@@ -5,7 +5,7 @@ import androidx.paging.PagingState
 import com.herdal.retrofitpaging.data.remote.ApiService
 import com.herdal.retrofitpaging.data.remote.model.Movie
 
-class MoviePagingSource(private val apiService: ApiService) : PagingSource<Int, Movie>() {
+class TopRatedMoviesPagingSource(private val apiService: ApiService) : PagingSource<Int, Movie>() {
 
     override fun getRefreshKey(state: PagingState<Int, Movie>): Int? =
         state.anchorPosition?.let { anchorPosition ->
@@ -16,7 +16,7 @@ class MoviePagingSource(private val apiService: ApiService) : PagingSource<Int, 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
         return try {
             val nextPageNumber = params.key ?: 1
-            val response = apiService.getPopularMovies(nextPageNumber)
+            val response = apiService.getTopRatedMovies(nextPageNumber)
 
             LoadResult.Page(
                 data = response.movies,

@@ -13,4 +13,22 @@ interface ApiService {
         @Query("page") page: Int,
         @Query("api_key") api_key: String = BuildConfig.API_KEY
     ): MovieResponse
+
+    @GET(ApiConstants.Endpoints.TOP_RATED)
+    suspend fun getTopRatedMovies(
+        @Query("page") page: Int,
+        @Query("api_key") api_key: String = BuildConfig.API_KEY
+    ): MovieResponse
+
+    @GET(ApiConstants.Endpoints.UPCOMING)
+    suspend fun getUpcomingMovies(
+        @Query("page") page: Int,
+        @Query("api_key") api_key: String = BuildConfig.API_KEY
+    ): MovieResponse
+
+    @GET(ApiConstants.Endpoints.NOW_PLAYING)
+    suspend fun getNowPlayingMovies(
+        @Query("page") page: Int,
+        @Query("api_key") api_key: String = BuildConfig.API_KEY
+    ): MovieResponse
 }

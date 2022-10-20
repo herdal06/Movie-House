@@ -1,4 +1,4 @@
-package com.herdal.retrofitpaging.ui.adapter
+package com.herdal.retrofitpaging.ui.movies.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
