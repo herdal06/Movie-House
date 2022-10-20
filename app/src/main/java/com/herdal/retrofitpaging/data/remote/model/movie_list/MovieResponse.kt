@@ -1,4 +1,4 @@
-package com.herdal.retrofitpaging.data.remote.model
+package com.herdal.retrofitpaging.data.remote.model.movie_list
 
 import com.google.gson.annotations.SerializedName
 

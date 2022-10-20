@@ -1,7 +1,7 @@
 package com.herdal.retrofitpaging.data.remote
 
 import com.herdal.retrofitpaging.BuildConfig
-import com.herdal.retrofitpaging.data.remote.model.MovieResponse
+import com.herdal.retrofitpaging.data.remote.model.movie_list.MovieResponse
 import com.herdal.retrofitpaging.data.remote.util.ApiConstants
 import retrofit2.http.GET
 import retrofit2.http.Query

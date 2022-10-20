@@ -3,7 +3,7 @@ package com.herdal.retrofitpaging.data.remote.pagingsource
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.herdal.retrofitpaging.data.remote.ApiService
-import com.herdal.retrofitpaging.data.remote.model.Movie
+import com.herdal.retrofitpaging.data.remote.model.movie_list.Movie
 
 class PopularMoviesPagingSource(private val apiService: ApiService) : PagingSource<Int, Movie>() {
 

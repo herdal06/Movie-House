@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.RecyclerView
-import com.herdal.retrofitpaging.data.remote.model.Movie
+import com.herdal.retrofitpaging.data.remote.model.movie_list.Movie
 import com.herdal.retrofitpaging.databinding.FragmentMoviesBinding
 import com.herdal.retrofitpaging.ui.movies.adapter.MoviesAdapter
 import dagger.hilt.android.AndroidEntryPoint

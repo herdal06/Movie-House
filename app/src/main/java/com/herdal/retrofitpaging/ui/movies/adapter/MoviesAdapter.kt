@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import com.herdal.retrofitpaging.data.remote.model.Movie
+import com.herdal.retrofitpaging.data.remote.model.movie_list.Movie
 import com.herdal.retrofitpaging.databinding.ItemMovieBinding
 
 class MoviesAdapter(
