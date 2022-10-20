@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.RecyclerView
 import com.herdal.retrofitpaging.data.remote.model.Movie
@@ -27,16 +28,16 @@ class MoviesFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: MoviesViewModel by viewModels()
     private val popularMoviesAdapter: MoviesAdapter by lazy {
-        MoviesAdapter()
+        MoviesAdapter(::onClickMovie)
     }
     private val topRatedMoviesAdapter: MoviesAdapter by lazy {
-        MoviesAdapter()
+        MoviesAdapter(::onClickMovie)
     }
     private val upcomingMoviesAdapter: MoviesAdapter by lazy {
-        MoviesAdapter()
+        MoviesAdapter(::onClickMovie)
     }
     private val nowPlayingMoviesAdapter: MoviesAdapter by lazy {
-        MoviesAdapter()
+        MoviesAdapter(::onClickMovie)
     }
 
     override fun onCreateView(
@@ -78,6 +79,11 @@ class MoviesFragment : Fragment() {
                 adapter.submitData(pagedData)
             }
         }
+
+    private fun onClickMovie(movieId: Int) {
+        val action = MoviesFragmentDirections.actionMoviesFragmentToMovieDetailsFragment(movieId)
+        findNavController().navigate(action)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
