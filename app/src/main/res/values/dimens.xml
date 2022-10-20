@@ -10,6 +10,7 @@
     <dimen name="image_view_height">128dp</dimen>
     <dimen name="text_view_border_radius">5dp</dimen>
     <dimen name="movie_details_text_view_width">265dp</dimen>
+    <dimen name="item_movie_height">270dp</dimen>
 
     <!-- Padding -->
     <dimen name="double_extra_large_padding">20dp</dimen>
