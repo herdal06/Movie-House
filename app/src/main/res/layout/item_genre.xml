@@ -19,6 +19,8 @@
             android:background="@drawable/border"
             android:padding="@dimen/extra_small_padding"
             android:text="@string/genre_example"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryVariant"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

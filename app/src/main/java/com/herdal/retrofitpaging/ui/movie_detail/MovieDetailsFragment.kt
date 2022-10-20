@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import com.herdal.retrofitpaging.data.remote.model.movie_details.MovieDetails
 import com.herdal.retrofitpaging.data.remote.util.ApiConstants
 import com.herdal.retrofitpaging.databinding.FragmentMovieDetailsBinding
+import com.herdal.retrofitpaging.ui.movie_detail.adapter.GenreAdapter
 import com.herdal.retrofitpaging.util.Resource
 import com.herdal.retrofitpaging.util.extensions.gone
 import com.herdal.retrofitpaging.util.extensions.loadImage
@@ -30,6 +31,10 @@ class MovieDetailsFragment : Fragment() {
     private val viewModel: MovieDetailsViewModel by viewModels()
     private val navigationArgs: MovieDetailsFragmentArgs by navArgs()
 
+    private val genreAdapter: GenreAdapter by lazy {
+        GenreAdapter()
+    }
+
     private fun getMovieId(): Int = navigationArgs.movieId
 
     override fun onCreateView(
@@ -45,6 +50,11 @@ class MovieDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         collectMovieDetails()
         getMovieById()
+        setupGenreAdapter()
+    }
+
+    private fun setupGenreAdapter() = binding.apply {
+        rvGenres.adapter = genreAdapter
     }
 
     private fun getMovieById() {
@@ -61,6 +71,7 @@ class MovieDetailsFragment : Fragment() {
                 }
                 is Resource.Success -> {
                     setupUI(it.data)
+                    genreAdapter.submitList(it.data.genres) // submit movie genres
                     binding.layoutMovieDetails.show()
                     binding.progressBarDetails.gone()
                     binding.tvErrorMessageDetails.gone()

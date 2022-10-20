@@ -1,9 +1,9 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <solid android:color="@android:color/transparent" />
+    <solid android:color="@color/starIconColor" />
     <stroke
         android:width="1dip"
-        android:color="@color/showAllTextColor" />
+        android:color="@color/starIconColor" />
 
     <corners android:radius="@dimen/text_view_border_radius" />
 </shape>
