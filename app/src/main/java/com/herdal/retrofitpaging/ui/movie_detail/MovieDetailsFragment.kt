@@ -12,7 +12,9 @@ import com.herdal.retrofitpaging.data.remote.model.movie_details.MovieDetails
 import com.herdal.retrofitpaging.data.remote.util.ApiConstants
 import com.herdal.retrofitpaging.databinding.FragmentMovieDetailsBinding
 import com.herdal.retrofitpaging.util.Resource
+import com.herdal.retrofitpaging.util.extensions.gone
 import com.herdal.retrofitpaging.util.extensions.loadImage
+import com.herdal.retrofitpaging.util.extensions.show
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -27,13 +29,13 @@ class MovieDetailsFragment : Fragment() {
     private val viewModel: MovieDetailsViewModel by viewModels()
     private val navigationArgs: MovieDetailsFragmentArgs by navArgs()
 
-    fun getMovieId(): Int = navigationArgs.movieId
+    private fun getMovieId(): Int = navigationArgs.movieId
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentMovieDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -52,22 +54,20 @@ class MovieDetailsFragment : Fragment() {
         viewModel.movie.collect {
             when (it) {
                 is Resource.Loading -> {
-                    binding.progressBarDetails.visibility = View.VISIBLE
-                    binding.tvErrorMessageDetails.visibility = View.GONE
-                    binding.layoutMovieDetails.visibility = View.GONE
+                    binding.progressBarDetails.show()
+                    binding.tvErrorMessageDetails.gone()
+                    binding.layoutMovieDetails.gone()
                 }
                 is Resource.Success -> {
-                    it.data.let { movie ->
-                        setupUI(movie)
-                    }
-                    binding.layoutMovieDetails.visibility = View.VISIBLE
-                    binding.progressBarDetails.visibility = View.GONE
-                    binding.tvErrorMessageDetails.visibility = View.GONE
+                    setupUI(it.data)
+                    binding.layoutMovieDetails.show()
+                    binding.progressBarDetails.gone()
+                    binding.tvErrorMessageDetails.gone()
                 }
                 is Resource.Error -> {
-                    binding.progressBarDetails.visibility = View.GONE
-                    binding.tvErrorMessageDetails.visibility = View.VISIBLE
-                    binding.layoutMovieDetails.visibility = View.GONE
+                    binding.progressBarDetails.gone()
+                    binding.tvErrorMessageDetails.show()
+                    binding.layoutMovieDetails.gone()
                 }
             }
         }
