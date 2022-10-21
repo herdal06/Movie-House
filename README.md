@@ -25,6 +25,7 @@ IMDB-like Application Based on TMDP API
 * ✅ [Coroutines][51] - A concurrency design pattern that you can use on Android to simplify code that executes asynchronously.
 * ✅ [Navigation Component][24] - Handle everything needed for in-app navigation. asynchronous tasks for optimal execution.
 * ✅ [Safe-Args][25] - For passing data between destinations
+* ✅ [Paging3][85] - The Paging library helps you load and display pages of data from a larger dataset from local storage or over network.
 * ✅ [Dagger-Hilt][93] - A dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in your project.
 * ✅ [ViewModel][17] - Easily schedule asynchronous tasks for optimal execution.
 * ✅ [Retrofit][90]- Retrofit is a REST client for Java/ Kotlin and Android by Square inc under Apache 2.0 license. Its a simple network library that is used for network transactions. By using this library we can seamlessly capture JSON response from web service/web API.
@@ -47,3 +48,4 @@ IMDB-like Application Based on TMDP API
 [24]: https://developer.android.com/guide/navigation/navigation-getting-started
 [25]: https://developer.android.com/guide/navigation/navigation-pass-data
 [23]: https://github.com/bumptech/glide
+[85]: https://developer.android.com/topic/libraries/architecture/paging/v3-overview
